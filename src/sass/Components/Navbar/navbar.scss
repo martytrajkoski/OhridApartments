@@ -1,0 +1,105 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    
+    a{
+        color: #056a75;
+        font-weight: 100;
+    }
+
+    .navbar-back{
+        width: 33%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 20px;
+        padding-left: 10px;
+        
+        a{
+            padding: 5px 10px;
+            border-radius: 50px;
+            transition: 200ms;
+            &:hover{
+                background-color: #056a75;
+                color: white;
+                transition: 200ms;
+            }
+        }
+
+        .navbar-logo{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            
+            img{
+                border-radius: 5px;
+            }
+
+            .navbar-logo-1{
+                position: relative;
+                z-index: 20;
+                width: 100px;
+                height: 65px;
+            }
+
+            .navbar-logo-2{
+                position: absolute;
+                top: 3px;
+                left: 19px;
+                z-index: 19;
+                height: 57px;
+
+            }
+
+            .navbar-logo-3{
+                position: absolute;
+                left: 30px;
+                z-index: 18;
+                height: 52px;
+            }
+
+            .navbar-logo-open{
+                position: relative;
+                width: 100px;
+                height: 65px;
+            }
+        }
+
+    }
+
+    .navbar-items{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width: 34%;
+
+        a{
+            border: 1px solid #056a75;
+            border-radius: 30px;
+            padding: 10px 25px;
+
+            &:hover{
+                background-color: #056a75;
+                color: white;
+                transition: 200ms;
+            }
+        }
+    }
+    
+    .navbar-weather{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding-right: 10px;
+        gap: 10px;
+        width: 33%;
+
+    }
+}

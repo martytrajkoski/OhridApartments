@@ -1,0 +1,61 @@
+{
+    "facilities": [
+        {
+            "apartment_id": 1,
+            "top_facilities": [
+                "Apartments",
+                "City view",
+                "Free Wifi",
+                "Terrace",
+                "Free Parking",
+                "Air conditioning",
+                "Private bathroom",
+                "Key card access",
+                "Daily Housekeeping",
+                "Non-smoking rooms"
+            ],
+            "rooms": [
+                {
+                    "room_id": 1,
+                    "all_facilities": [
+                        "Desk",
+                        "Carbon monoxide detector",
+                        "Coffee machine",
+                        "Upper floors accessible by stairs only",
+                        "Flat-screen TV",
+                        "Executive lounge access",
+                        "Extra long beds (> 2 metres)",
+                        "Air purifiers",
+                        "Fan",
+                        "Towels",
+                        "Private apartment in building",
+                        "Seating Area",
+                        "Socket near the bed",
+                        "Tea/Coffee maker",
+                        "Fold-up bed",
+                        "Towels/sheets (extra fee)",
+                        "TV",
+                        "Refrigerator",
+                        "Hypoallergenic",
+                        "Linen",
+                        "Tile/marble floor",
+                        "Electric kettle",
+                        "Sofa bed",
+                        "Single-room air conditioning for guest accommodation",
+                        "Heating",
+                        "Cable channels",
+                        "Wardrobe or closet",
+                        "Outdoor dining area",
+                        "Cleaning products",
+                        "Soundproofing",
+                        "Mosquito net",
+                        "Satellite channels",
+                        "Air conditioning",
+                        "Clothes rack",
+                        "Hand sanitiser"
+                    ]
+                }
+            ]
+        }
+    ]
+}

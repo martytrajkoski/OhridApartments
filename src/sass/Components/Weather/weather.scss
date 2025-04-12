@@ -1,0 +1,17 @@
+.weather-widget {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #056a75;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: white;
+  
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  

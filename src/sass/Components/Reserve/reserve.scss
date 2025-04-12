@@ -1,0 +1,46 @@
+.reserve-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .reserve{
+        position: relative;
+        z-index: 1002;
+        width: 60%;
+        // width: 1000px;
+        height: 70vh;
+        border: 1px solid red;
+        border-radius: 36px;
+        background-color: rgba(179, 179, 179, 0.682);
+        display: flex;
+        justify-content: space-evenly;
+        
+        .reserve-form{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            // margin: 20px;
+            padding: 20px;
+            border-radius: 20px;
+
+            input, textarea{
+                border: 1px solid black;
+                border-radius: 10px;
+                padding: 10px 10px;
+                width: 300px;
+            }
+
+            button{
+                border-radius: 10px;
+                padding: 10px;
+            }
+        }
+    }
+}

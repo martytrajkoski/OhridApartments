@@ -1,0 +1,80 @@
+{
+    "apartments":[
+        {
+            "id": 1,
+            "name": "Boulevard Apartments",
+            "description": "<p>Boasting garden views, Boulevard Luxury Apartments City Center Ohrid provides accommodation with terrace, around 1.2 km from Saraiste Beach. The property has city and quiet street views, and is 1.6 km from Potpesh Beach. The apartment also features free WiFi, free private parking and facilities for disabled guests.</p><p>All units are fitted with air conditioning, a flat-screen TV with satellite channels, a fridge, a kettle, a shower, a hair dryer and a desk. The apartment complex offers some units that have mountain views, and every unit comes with a private bathroom and a wardrobe. At the apartment complex, the units are fitted with bed linen and towels.</p>",
+            "images": [
+                "https://cf.bstatic.com/xdata/images/hotel/max1024x768/647772212.jpg?k=fd939f6a36fe34127c8a6beb93f208eccc727168bef297110ac381c676328d2e&o=&hp=1",
+                "https://cf.bstatic.com/xdata/images/hotel/max1024x768/647773277.jpg?k=1349d4f1e302fa3436e6bd898da26a307df216b00923bccc433cb01340bfa0d8&o=&hp=1",
+                "https://cf.bstatic.com/xdata/images/hotel/max1024x768/647772996.jpg?k=045a71931249ea29d6a9eefb189b11742c08b439709eb1ad8620c3bf939084bb&o=&hp=1",
+                "https://cf.bstatic.com/xdata/images/hotel/max1024x768/647772122.jpg?k=4aa5e8f360a3618085e3ec6ef38df62452a318216f2b114b8d35fec72ba6d0fe&o=&hp=1",
+                "https://cf.bstatic.com/xdata/images/hotel/max1024x768/219350336.jpg?k=b564658930539682dd0880493cd8064c5d6a46679921feded6311fa90a47e6bf&o=&hp=1"
+            ],
+            "logo": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/647772212.jpg?k=fd939f6a36fe34127c8a6beb93f208eccc727168bef297110ac381c676328d2e&o=&hp=1",
+            "top_facilities": ["Apartments", "City view", "Free Wifi", "Terrace", "Free Parking", "Air conditioning", "Private bathroom", "Key card access", "Daily Housekeeping", "Non-smoking rooms"],
+            "check_in": "12:00",
+            "chekck_out": "09:00",
+            "rating": 9.9,
+            "email": "martino-spiroski@gmail.com",
+            "phone": ["+38972222222", "4324232"]
+        },
+        {
+            "id": 2,
+            "name": "Boulevard Apartments",
+            "description": "<p>Boasting garden views, Boulevard Luxury Apartments City Center Ohrid provides accommodation with terrace, around 1.2 km from Saraiste Beach. The property has city and quiet street views, and is 1.6 km from Potpesh Beach. The apartment also features free WiFi, free private parking and facilities for disabled guests.</p><p>All units are fitted with air conditioning, a flat-screen TV with satellite channels, a fridge, a kettle, a shower, a hair dryer and a desk. The apartment complex offers some units that have mountain views, and every unit comes with a private bathroom and a wardrobe. At the apartment complex, the units are fitted with bed linen and towels.</p>",
+            "images": [
+                "https://cf.bstatic.com/xdata/images/hotel/max1024x768/647772212.jpg?k=fd939f6a36fe34127c8a6beb93f208eccc727168bef297110ac381c676328d2e&o=&hp=1",
+                "https://cf.bstatic.com/xdata/images/hotel/max1024x768/647773277.jpg?k=1349d4f1e302fa3436e6bd898da26a307df216b00923bccc433cb01340bfa0d8&o=&hp=1",
+                "https://cf.bstatic.com/xdata/images/hotel/max1024x768/647772996.jpg?k=045a71931249ea29d6a9eefb189b11742c08b439709eb1ad8620c3bf939084bb&o=&hp=1",
+                "https://cf.bstatic.com/xdata/images/hotel/max1024x768/647772122.jpg?k=4aa5e8f360a3618085e3ec6ef38df62452a318216f2b114b8d35fec72ba6d0fe&o=&hp=1",
+                "https://cf.bstatic.com/xdata/images/hotel/max1024x768/219350336.jpg?k=b564658930539682dd0880493cd8064c5d6a46679921feded6311fa90a47e6bf&o=&hp=1"
+            ],
+            "logo": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/647772212.jpg?k=fd939f6a36fe34127c8a6beb93f208eccc727168bef297110ac381c676328d2e&o=&hp=1",
+            "top_facilities": ["Apartments", "City view", "Free Wifi", "Terrace", "Free Parking", "Air conditioning", "Private bathroom", "Key card access", "Daily Housekeeping", "Non-smoking rooms"],
+            "check_in": "12:00",
+            "chekck_out": "09:00",
+            "rating": 9.9,
+            "email": "martino-spiroski@gmail.com",
+            "phone": "+38972222222"
+        },
+        {
+            "id": 3,
+            "name": "Boulevard Apartments",
+            "description": "<p>Boasting garden views, Boulevard Luxury Apartments City Center Ohrid provides accommodation with terrace, around 1.2 km from Saraiste Beach. The property has city and quiet street views, and is 1.6 km from Potpesh Beach. The apartment also features free WiFi, free private parking and facilities for disabled guests.</p><p>All units are fitted with air conditioning, a flat-screen TV with satellite channels, a fridge, a kettle, a shower, a hair dryer and a desk. The apartment complex offers some units that have mountain views, and every unit comes with a private bathroom and a wardrobe. At the apartment complex, the units are fitted with bed linen and towels.</p>",
+            "images": [
+                "https://cf.bstatic.com/xdata/images/hotel/max1024x768/647772212.jpg?k=fd939f6a36fe34127c8a6beb93f208eccc727168bef297110ac381c676328d2e&o=&hp=1",
+                "https://cf.bstatic.com/xdata/images/hotel/max1024x768/647773277.jpg?k=1349d4f1e302fa3436e6bd898da26a307df216b00923bccc433cb01340bfa0d8&o=&hp=1",
+                "https://cf.bstatic.com/xdata/images/hotel/max1024x768/647772996.jpg?k=045a71931249ea29d6a9eefb189b11742c08b439709eb1ad8620c3bf939084bb&o=&hp=1",
+                "https://cf.bstatic.com/xdata/images/hotel/max1024x768/647772122.jpg?k=4aa5e8f360a3618085e3ec6ef38df62452a318216f2b114b8d35fec72ba6d0fe&o=&hp=1",
+                "https://cf.bstatic.com/xdata/images/hotel/max1024x768/219350336.jpg?k=b564658930539682dd0880493cd8064c5d6a46679921feded6311fa90a47e6bf&o=&hp=1"
+            ],
+            "logo": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/647772212.jpg?k=fd939f6a36fe34127c8a6beb93f208eccc727168bef297110ac381c676328d2e&o=&hp=1",
+            "top_facilities": ["Apartments", "City view", "Free Wifi", "Terrace", "Free Parking", "Air conditioning", "Private bathroom", "Key card access", "Daily Housekeeping", "Non-smoking rooms"],
+            "check_in": "12:00",
+            "chekck_out": "09:00",
+            "rating": 9.9,
+            "email": "martino-spiroski@gmail.com",
+            "phone": "+38972222222"
+        },
+        {
+            "id": 4,
+            "name": "Boulevard Apartments",
+            "description": "<p>Boasting garden views, Boulevard Luxury Apartments City Center Ohrid provides accommodation with terrace, around 1.2 km from Saraiste Beach. The property has city and quiet street views, and is 1.6 km from Potpesh Beach. The apartment also features free WiFi, free private parking and facilities for disabled guests.</p><p>All units are fitted with air conditioning, a flat-screen TV with satellite channels, a fridge, a kettle, a shower, a hair dryer and a desk. The apartment complex offers some units that have mountain views, and every unit comes with a private bathroom and a wardrobe. At the apartment complex, the units are fitted with bed linen and towels.</p>",
+            "images": [
+                "https://cf.bstatic.com/xdata/images/hotel/max1024x768/647772212.jpg?k=fd939f6a36fe34127c8a6beb93f208eccc727168bef297110ac381c676328d2e&o=&hp=1",
+                "https://cf.bstatic.com/xdata/images/hotel/max1024x768/647773277.jpg?k=1349d4f1e302fa3436e6bd898da26a307df216b00923bccc433cb01340bfa0d8&o=&hp=1",
+                "https://cf.bstatic.com/xdata/images/hotel/max1024x768/647772996.jpg?k=045a71931249ea29d6a9eefb189b11742c08b439709eb1ad8620c3bf939084bb&o=&hp=1",
+                "https://cf.bstatic.com/xdata/images/hotel/max1024x768/647772122.jpg?k=4aa5e8f360a3618085e3ec6ef38df62452a318216f2b114b8d35fec72ba6d0fe&o=&hp=1",
+                "https://cf.bstatic.com/xdata/images/hotel/max1024x768/219350336.jpg?k=b564658930539682dd0880493cd8064c5d6a46679921feded6311fa90a47e6bf&o=&hp=1"
+            ],
+            "logo": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/647772212.jpg?k=fd939f6a36fe34127c8a6beb93f208eccc727168bef297110ac381c676328d2e&o=&hp=1",
+            "top_facilities": ["Apartments", "City view", "Free Wifi", "Terrace", "Free Parking", "Air conditioning", "Private bathroom", "Key card access", "Daily Housekeeping", "Non-smoking rooms"],
+            "check_in": "12:00",
+            "chekck_out": "09:00",
+            "rating": 9.9,
+            "email": "martino-spiroski@gmail.com",
+            "phone": "+38972222222"
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+.homepage{
+
+    .book-component{
+        height: 70vh;
+        position: relative;
+        box-shadow: 0 6px 4px rgba(0, 0, 0, 0.2);
+
+        .overlay-center{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            z-index: 10;
+
+            button{
+                padding: 30px 80px;
+                border-radius: 30px;
+                cursor: pointer;
+                font-size: 20px;
+                font-weight: 500;
+                color: #056a75;
+                background-color: white;
+                border: 2px solid #056a75;
+                transition: 200ms;
+
+                &:hover{
+                    background-color: #056a75;
+                    color: white;
+                    transition: 200ms;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+//Pages
+@use 'Pages/Onboarding/onboarding.scss';
+@use 'Pages/Home/home.scss';
+@use 'Pages/Room/room.scss';
+
+//Component
+@use 'Components/Navbar/navbar.scss';
+@use 'Components/RoomCard/room-card.scss';
+@use 'Components/Slideshow/Gallery/gallery.scss';
+@use 'Components/Slideshow/Gallery/modal.scss';
+@use 'Components/Slideshow/Slideshow/slideshow.scss';
+@use 'Components/Reserve/reserve.scss';
+@use 'Components/Weather/weather.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300&family=Patrick+Hand+SC&display=swap');
+
+
+// Other defaults
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+p,
+a,
+small,
+input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html{
+  font-family: 'Oxygen';
+}
+
+a{
+    text-decoration: none;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+input{
+    &:focus {
+      outline: none;
+    }
+}
+
+*{
+    font-family: 'Oxygen';
+}
+

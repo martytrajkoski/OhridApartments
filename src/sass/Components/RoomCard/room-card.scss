@@ -1,0 +1,28 @@
+.room-card{
+    border-radius: 32px;
+    margin: 40px 100px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    color: #056a75;
+    transition: 200ms;
+    
+    .room-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 70%;
+    }
+    
+    img{
+        width: 300px;
+        height: 200px;
+        border-radius: 20px;
+    }
+
+    &:hover{
+        background-color: rgb(227, 227, 227);
+        transition: 200ms;
+    }
+}
