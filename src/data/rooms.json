@@ -6,7 +6,7 @@
             "name": "Single bed",
             "description": "This air-conditioned single room is comprised of a flat-screen TV with cable channels, a private bathroom as well as a terrace with garden views. The unit has 3 beds",
             "room_size": 28,
-            "bed": "3 single beds",
+            "bed": "3 single beds", enum
             "bathroom": [
                 "Free toiletries",
                 "Toilet",

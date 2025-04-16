@@ -1,4 +1,4 @@
-.onboarding{
+.onboarding {
     position: relative;
     height: 100vh;
     display: flex;
@@ -7,18 +7,58 @@
     align-items: center;
     background-image: url('/src/assets/ohrid.jpg');
     background-size: cover;
+    overflow: hidden;
 
-    .onboarding-container{
+    .onboarding-container {
         display: flex;
+        flex-wrap: wrap;
         gap: 30px;
-        .onboarding-card{
-            img{
-                width: 220px;
+        transition: transform 0.6s ease, z-index 0s 0.6s;
+        cursor: pointer;
+        z-index: 1;
+
+        .onboarding-card {
+            transition: 200ms;
+
+            img {
+                width: 280px;
             }
+
+            &:hover {
+                scale: 1.1;
+                transition: 200ms;
+            }
+        }
+
+        .onboarding-card.zoomed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            transform: scale(5);
+            transition: transform 0.6s ease, z-index 0s;
+        }
+
+        .onboarding-card.zoomed img {
+            position: absolute;
+            width: 50%;
+            max-width: 400px;
+            object-fit: contain;
+        }
+
+        .onboarding-card.faded,
+        .onboarding-bottom-card.faded {
+            opacity: 0;
+            pointer-events: none;
         }
     }
 
-    .onboarding-bottom-card{
+    .onboarding-bottom-card {
         position: absolute;
         bottom: 0;
         height: 50px;
@@ -27,5 +67,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: 200ms;
+
+        &:hover {
+            padding: 0 20px 20px 20px;
+            transition: 200ms;
+        }
     }
 }
