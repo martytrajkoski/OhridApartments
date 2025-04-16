@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import Slideshow from "../Slideshow/Slideshow/Slideshow";
 import {apartments} from "../../data/apartments.json";
 import Reserve from "../Reserve/Reserve";
