@@ -1,11 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { apartments } from "../../data/apartments.json";
+import axiosClient from "../../axios/axiosClient";
+import { ApartmentType } from "../../types/types";
 
 const Onboarding: React.FC = () => {
     const [zoomIndex, setZoomIndex] = useState<number | null>(null);
     const [hoverBg, setHoverBg] = useState<string | null>(null);
+    const [apartments, setApartments] = useState<ApartmentType[]>([]);
     const navigate = useNavigate();
+
+    useEffect(()=>{
+        fetchAparments();
+    },[])
+
+    const fetchAparments = async() => {
+        try {
+            const response = await axiosClient.get('/apartments-summary');
+            setApartments(response.data.apartments_summary);
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
 
     const handleCardClick = (index: number, route: string) => {
         setZoomIndex(index);
@@ -23,7 +40,7 @@ const Onboarding: React.FC = () => {
             }}
         >
             <div className="onboarding-container">
-                {apartments.map((apartment: any, index: number) => (
+                {apartments?.map((apartment: any, index: number) => (
                     <div
                         key={index}
                         className={`onboarding-card ${

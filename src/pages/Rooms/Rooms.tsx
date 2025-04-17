@@ -3,6 +3,7 @@ import RoomCard from "../../components/RoomCard/RoomCard";
 import {rooms} from "../../data/rooms.json";
 
 const Rooms: React.FC = () =>{
+
     return(
         <div>
             {rooms.map((room:any, index:number) => (

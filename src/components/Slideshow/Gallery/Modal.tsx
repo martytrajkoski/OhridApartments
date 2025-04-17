@@ -15,14 +15,14 @@ const Modal: React.FC<Props> = ({ images, onClose, initialIndex }) => {
         <button className="close-btn" onClick={onClose}>×</button>
 
         <div className="modal-main-image">
-          <img src={images[selectedIndex]} alt={`selected-${selectedIndex}`} />
+          <img src={`${images[selectedIndex]}`} alt={`selected-${selectedIndex}`} />
         </div>
 
         <div className="thumbnail-row">
-          {images.map((src, index) => (
+          {images.map((item, index) => (
             <img
               key={index}
-              src={src}
+              src={`${item}`}
               alt={`thumb-${index}`}
               className={`thumbnail-img ${index === selectedIndex ? "active" : ""}`}
               onClick={() => setSelectedIndex(index)}

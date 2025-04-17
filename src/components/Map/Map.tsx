@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Map: React.FC<{ lat: number; lng: number; zoom: number }> = ({ lat, lng, zoom }) => {
+const Map: React.FC<{ lat: number; lng: number; zoom: number }> = ({ lat=0, lng=0, zoom=15 }) => {
   const mapSrc = `https://maps.google.com/maps?q=${lat},${lng}&z=${zoom}&output=embed`;
 
   return (
