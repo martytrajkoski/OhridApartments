@@ -5,7 +5,7 @@ type Props = {
   images: string[];
 };
 
-const Gallery: React.FC<Props> = ({ images }) => {
+const Gallery: React.FC<Props> = ({ images = [] }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -20,13 +20,13 @@ const Gallery: React.FC<Props> = ({ images }) => {
   return (
     <>
       <div className="gallery-grid">
-        {visibleImages.map((src, index) => (
+        {visibleImages.map((item: string, index) => (
           <div
             key={index}
             className={`gallery-item ${index === 0 || index === 1 ? "large" : ""}`}
             onClick={() => {handleClick(index); setShowModal(true)}}
           >
-            <img src={src} alt={`thumb-${index}`} />
+            <img src={`${item}`} alt={`thumb-${index}`} />
           </div>
         ))}
         {remainingCount > 0 && (
