@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 interface WeatherData {
+  name: string;
   temp: number;
   icon: string;
   description: string;
@@ -22,6 +23,7 @@ const WeatherWidget: React.FC = () => {
           temp: Math.round(data.main.temp),
           icon: `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`,
           description: data.weather[0].main,
+          name: data.name
         });
       } catch (err) {
         console.error('Weather error:', err);
@@ -35,6 +37,7 @@ const WeatherWidget: React.FC = () => {
     <div className="weather-widget">
       {weather ? (
         <>
+          <p>{weather.name}</p>
           <img src={weather.icon} alt={weather.description} />
           <span>{weather.temp}°C</span>
         </>
