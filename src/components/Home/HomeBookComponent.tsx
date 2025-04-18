@@ -12,7 +12,7 @@ const HomeBookComponent: React.FC = () => {
 
     useEffect(()=>{
         fetchAparment()
-    },[])
+    },[apartment])
 
     const fetchAparment = async() =>{
         try {
@@ -33,6 +33,7 @@ const HomeBookComponent: React.FC = () => {
         <div className="book-component">
             <Slideshow images={apartmentImages ?? []} />
             <div className="overlay-center">
+                <span>{ apartment }</span>
                 <button onClick={()=>setShowReservationModal(true)} className="book-now">Book Now</button>
             </div>
             {showReservationModal && (

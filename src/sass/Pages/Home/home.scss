@@ -12,9 +12,21 @@
             -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
             z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+
+            span{
+                font-size: 80px;
+                font-weight: 600;
+                color: white;
+                text-align: center;
+            }
 
             button{
-                padding: 30px 80px;
+                padding: 20px 60px;
                 border-radius: 30px;
                 cursor: pointer;
                 font-size: 20px;

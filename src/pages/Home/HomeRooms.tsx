@@ -10,7 +10,7 @@ const HomeRooms: React.FC = () => {
 
     useEffect(()=>{
         fetchRooms();
-    },[])
+    },[apartment])
 
     const fetchRooms = async() => {
         try {
