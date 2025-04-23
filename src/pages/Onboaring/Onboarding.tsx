@@ -17,12 +17,12 @@ const Onboarding: React.FC = () => {
         try {
             const response = await axiosClient.get('/apartments-summary');
             setApartments(response.data.apartments_summary);
+            console.log('first', response.data.apartments_summary)
 
         } catch (error) {
             console.error(error);
         }
     }
-
 
     const handleCardClick = (index: number, route: string) => {
         setZoomIndex(index);
@@ -36,9 +36,12 @@ const Onboarding: React.FC = () => {
             className="onboarding"
             style={{
                 backgroundImage: `url(${hoverBg || "/src/assets/ohrid.jpg"})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
                 transition: '300ms'
             }}
         >
+            <div className="overlay-center"></div>
             <div className="onboarding-container">
                 {apartments?.map((apartment: any, index: number) => (
                     <div

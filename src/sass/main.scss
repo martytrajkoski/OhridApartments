@@ -2,6 +2,7 @@
 @use 'Pages/Onboarding/onboarding.scss';
 @use 'Pages/Home/home.scss';
 @use 'Pages/Room/room.scss';
+@use 'Pages/About/about.scss';
 
 //Component
 @use 'Components/Navbar/navbar.scss';
@@ -34,6 +35,11 @@ input {
 
 html{
   font-family: 'Oxygen';
+  background-color:#056a75be;
+}
+
+body{
+  height: 100%;
 }
 
 a{

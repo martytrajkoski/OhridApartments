@@ -45,3 +45,35 @@
         }
     }
 }
+
+@media (max-width: 1024px){
+    .homepage{
+        .book-component{
+            height: 60vh;
+
+            .overlay-center{
+
+                span{
+                    font-size: 50px;
+                }
+
+                button{
+                    padding: 16px 45px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px){
+    .homepage{
+        .book-component{
+            .overlay-center{
+
+                button{
+                    padding: 12px 40px;
+                }
+            }
+        }
+    }
+}
