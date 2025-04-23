@@ -73,7 +73,7 @@
             }
             
             input[type="text"], input[type="date"], textarea{
-                padding: 10px 10px;
+                padding: 10px 15px;
                 width: 300px;
                 font-size: 18px;
                 font-weight: 500;
@@ -81,6 +81,7 @@
                 background-color: white;
                 border: 2px solid #056a75;
                 border-radius: 10px;
+                box-sizing: border-box;
                 transition: 200ms;
                 resize: none;
 
@@ -114,7 +115,53 @@
                 }
             }
 
+            .button-submit-m{
+                display: none;
+            }
+        }
+    }
+}
 
+@media (max-width: 1160px){
+    .reserve-backdrop{
+
+        .reserve{
+            width: 100%;
+            height: 100vh;
+            border-radius: 0px;
+
+        }
+    }
+}
+
+@media (max-width: 680px){
+    .reserve-backdrop{
+
+        .reserve{
+            width: 100%;
+            height: 100vh;
+            border-radius: 0px;
+            justify-content: center;
+            gap: 50px;
+
+            .reserve-top{
+                flex-direction: column-reverse;
+                gap: 20px;
+                text-align: center;
+                font-size: 20px;
+            }
+
+            .reserve-form{
+                flex-direction: column;
+
+                .button-submit{
+                    display: none;
+                }
+
+                .button-submit-m{
+                    display: block;
+                }
+            }
         }
     }
 }

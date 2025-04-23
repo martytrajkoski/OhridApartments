@@ -31,6 +31,10 @@
             }
         }
 
+        svg{
+            cursor: pointer;
+        }
+
         .navbar-logo-wrapper {
             display: flex;
             align-items: center;
@@ -74,6 +78,10 @@
         }
     }
 
+    .navbar-burger, .burger-backdrop-closed, .burger-backdrop{
+        display: none;
+    }
+
     .navbar-items {
         position: absolute;
         left: 50%;
@@ -94,7 +102,7 @@
         }
 
         &.navbar-items-shift {
-            transform: translateX(calc(-50% + 100px)); 
+            transform: translateX(calc(-20% + 100px)); 
         }
     }
 
@@ -102,5 +110,72 @@
         display: flex;
         align-items: center;
         gap: 10px;
+    }
+}
+
+@media (max-width: 935px){
+    .navbar{
+        justify-content: space-between;
+
+        .navbar-back{
+            gap: 20px;
+
+            .back-button{
+                display: none;
+            }
+
+            .navbar-logo-wrapper{
+                display: none;
+            }
+        }
+
+        .navbar-items{
+            display: none;
+        }
+
+        .navbar-burger{
+            display: block;
+            
+            svg{
+                height: 25px;
+            }
+        }
+
+        .burger-backdrop{
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 70px;
+            z-index: 20;
+            width: 100%;
+            height: 100vh;
+            background-color: #056a75de;
+            -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+
+            a{
+                color: white;
+                font-size: 22px;
+            }
+            .burger-menu, .burger-apartments{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                padding: 30px 0px;
+                font-size: 20px;
+                border-bottom: 1px solid white;
+
+            }
+
+            img{
+                width: 150px;
+                height: 100px;
+            }
+        }
+
+        .burger-backdrop-closed{
+            display: none;
+        }
     }
 }

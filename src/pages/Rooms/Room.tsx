@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck, faLocationDot, faStar } from "@fortawesome/free-solid-svg-icons";
+import { faBed, faCheck, faHouse, faLocationDot, faParking, faSquareParking, faStar } from "@fortawesome/free-solid-svg-icons";
 import Gallery from "../../components/Slideshow/Gallery/Gallery";
 import parser from "html-react-parser";
 import Map from "../../components/Map/Map";
@@ -65,19 +65,43 @@ const Room: React.FC = () => {
                     <div className="room-description-text">
                         {parser(roomData?.description ?? "")}
                     </div>
-                    <div>
-                        <div className="all-facilities">
-                            <b>Views:</b>
-                            {roomData?.view.map((item:any, index:number) => (
-                                <div key={index}><FontAwesomeIcon icon={faCheck}/> {item}</div>
-                            ))}
-                        </div>
-                        <div className="all-facilities">
-                            <b>Bathroom:</b>
-                            {roomData?.bathroom.map((item:any, index:number) => (
-                                <div key={index}><FontAwesomeIcon icon={faCheck}/> {item}</div>
-                            ))}
-                        </div>
+                    <div className="facility">
+                        {roomData?.bed && (
+                            <div className="all-facilities">
+                                {roomData.bed.map((item, index) => (
+                                    <div key={index}><FontAwesomeIcon icon={faBed}/> {item}</div>
+                                ))}
+                            </div>
+                        )}
+                        {roomData?.room_size && (
+                            <div><b>Room Size: </b>{roomData.room_size} m<sup>2</sup></div>
+                        )} 
+                        {roomData?.parking && (
+                            <div><FontAwesomeIcon icon={faParking}/> {roomData.parking}</div>
+                        )} 
+                    </div>
+                    <div className="facilities">
+                        {roomData?.view && (
+                            <div>
+                                <b>Views:</b>
+                                <div className="all-facilities">
+                                    {roomData?.view && roomData?.view.map((item:any, index:number) => (
+                                        <div key={index}><FontAwesomeIcon icon={faCheck}/> {item}</div>
+                                    ))}
+                                </div>
+
+                            </div>
+                        )}
+                        {roomData?.bathroom && (
+                            <div>
+                                <b>Bathroom:</b>
+                                <div className="all-facilities">
+                                    {roomData?.bathroom.map((item:any, index:number) => (
+                                        <div key={index}><FontAwesomeIcon icon={faCheck}/> {item}</div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
                 <div className="room-description-sidebar">
@@ -86,8 +110,6 @@ const Room: React.FC = () => {
                             <div key={index}><FontAwesomeIcon icon={faCheck}/> {facility.name}</div>
                         ))}
                     </div>
-
-                    <Link to={'/'}>Reserve</Link>
                 </div>
             </div>
             {showReservationModal && (

@@ -19,10 +19,6 @@ const Slideshow: React.FC<SlideshowProps> = ({ images = [], interval = 5000, }) 
     return () => clearInterval(id);
   }, [images.length, interval]);
 
-  if (images.length === 0) {
-    return <div className="slideshow empty">No images available</div>;
-  }
-
   return (
     <div className="slideshow">
       {images.map((src, index) => (

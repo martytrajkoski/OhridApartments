@@ -5,6 +5,7 @@ import Apartment from "../pages/Apartment/Apartment";
 import Home from "../pages/Home/Home";
 import Rooms from "../pages/Rooms/Rooms";
 import Room from "../pages/Rooms/Room";
+import About from "../pages/About/About";
 
 const AppRoutes: React.FC = () =>{
     return(
@@ -15,6 +16,7 @@ const AppRoutes: React.FC = () =>{
                     <Route index element={<Home/>} />
                     <Route path="rooms" element={<Rooms/>}/>
                     <Route path=":room" element={<Room/>}/>
+                    <Route path="about" element={<About/>}/>
                 </Route>
             </Routes>
         </Router>
