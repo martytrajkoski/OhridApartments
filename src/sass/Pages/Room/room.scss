@@ -73,7 +73,6 @@
             width: 35%;
             display: flex;
             justify-content: center;
-            // align-items: center;
         }
     }
 
@@ -171,5 +170,11 @@
     .room{
         margin: 0px;
         border-radius: 0px;
+
+        .room-info{
+            .room-info-button{
+                gap: 18px;
+            }
+        }
     }
 }

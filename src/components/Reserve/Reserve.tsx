@@ -17,39 +17,65 @@ const Reserve: React.FC<Props> = ({ onClose }) => {
     const [persons, setPersons] = useState<string>("");
     const [fromDate, setFromDate] = useState<string>("");
     const [toDate, setToDate] = useState<string>("");
-
+    const today = new Date().toISOString().split("T")[0];
+    const [errors, setErrors] = useState({
+        fullName: false,
+        fromEmail: false,
+        persons: false,
+        messageContent: false
+    });
 
     const sendEmail = async(e:any) => {
         e.preventDefault();
+
+        const newErrors = {
+            fullName: !fullName,
+            fromEmail: !fromEmail,
+            persons: !persons,
+            messageContent: !messageContent
+        };
+        setErrors(newErrors);
+    
+        if (Object.values(newErrors).some((err) => err)) return;
 
         let finalMessage = "";
 
         if (includeDates && fromDate && toDate) {
             finalMessage += `Dates of stay: from ${fromDate} to ${toDate}\n`;
         }
-    
+        console.log('finalMessage', finalMessage)
         if (persons) {
             finalMessage += `Number of persons: ${persons}\n`;
         }
     
         if (messageContent) {
-            finalMessage += `\nMessage:\n${messageContent}`;
+            finalMessage += `\n${messageContent}`;
         }
-        console.log('finalMessage', finalMessage)
+        
         try {
-            const response = await axiosClient.post('mail/send', {
+
+            await axiosClient.post('mail/send', {
                 fromName: fullName,
                 fromEmail: fromEmail,
                 emailSubject: apartment,
-                messageContent: messageContent
+                messageContent: finalMessage
             })
 
-            console.log('response', response);
+            setFullName("");
+            setFromEmail("");
+            setPersons("");
+            setMessageContent("");
+            setFromDate("");
+            setToDate("");
+            setIncludeDates(false);
+
         } catch (error) {
             console.error(error);
+        } finally {
+            onClose();
+            alert('Message sent successfully!')
         }
 
-        onClose();
     }
 
     return (
@@ -61,20 +87,48 @@ const Reserve: React.FC<Props> = ({ onClose }) => {
                 </div>
                 <form className="reserve-form" onSubmit={sendEmail}>
                     <div className="form-inputs">
-                        <input type="text" placeholder="Enter your full name" value={fullName} onChange={(e)=>setFullName(e.target.value)}/>
-                        <input type="text" placeholder="Enter your email" value={fromEmail} onChange={(e)=>setFromEmail(e.target.value)}/>
-                        <input type="text" placeholder="Persons" value={persons} onChange={(e)=>setPersons(e.target.value)}/>
-                        <textarea placeholder="Send a message to the owner" value={messageContent} onChange={(e)=>setMessageContent(e.target.value)}/>
+                        <input 
+                            type="text" 
+                            name="fullname" 
+                            placeholder="Enter your full name" 
+                            value={fullName} 
+                            onChange={(e)=>setFullName(e.target.value)}
+                            className={errors.fullName ? "input-error" : ""}
+                        />
+                        <input 
+                            type="email" 
+                            name="email" 
+                            placeholder="Enter your email" 
+                            value={fromEmail} 
+                            onChange={(e)=>setFromEmail(e.target.value)}
+                            className={errors.fromEmail ? "input-error" : ""}
+                        />
+                        <input
+                            type="number"
+                            name="persons"
+                            min={1}
+                            max={20}
+                            placeholder="Number of persons"
+                            value={persons}
+                            onChange={(e) => setPersons(e.target.value)}
+                            className={errors.persons ? "input-error" : ""}
+                        />
+                        <textarea 
+                            placeholder="Send a message to the owner" 
+                            value={messageContent} 
+                            onChange={(e)=>setMessageContent(e.target.value)}
+                            className={errors.messageContent ? "input-error" : ""}
+                        />
                         <button type="submit" className="button-submit">Send Email</button>
                     </div>
                     <div className="form-calendar">
                         <div className="form-calendar-input">
                             <label>From:</label>
-                            <input type="date" disabled={!includeDates} onChange={(e) => setFromDate(e.target.value)}                            />
+                            <input type="date" min={today} disabled={!includeDates} onChange={(e) => setFromDate(e.target.value)}                            />
                         </div>
                         <div className="form-calendar-input">
                             <label>To:</label>
-                            <input type="date" disabled={!includeDates} onChange={(e) => setToDate(e.target.value)}/>
+                            <input type="date" min={today} disabled={!includeDates} onChange={(e) => setToDate(e.target.value)}/>
                         </div>
                         <div className="calendar-button">
                             <input

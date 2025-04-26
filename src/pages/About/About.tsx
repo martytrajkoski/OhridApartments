@@ -6,16 +6,20 @@ import parser from "html-react-parser";
 import Map from "../../components/Map/Map";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import Loading from "../../components/Loading/Loading";
 
 const About: React.FC = () => {
     const [apartmentData, setApartmentData] = useState<ApartmentType>();
     const { apartment } = useParams<string>();
+    const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
         fetchApartment();
     }, [])
 
     const fetchApartment = async () => {
+        setLoading(true);
+
         try {
             const response = await axiosClient.post('apartment', {
                 name: apartment
@@ -23,10 +27,12 @@ const About: React.FC = () => {
 
             if (response.status === 200) {
                 setApartmentData(response.data.apartment);
-                console.log('apartment', apartmentData)
             }
+            
         } catch (error) {
             console.error(error);
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -34,6 +40,7 @@ const About: React.FC = () => {
     return (
         <div className="about">
             <div className="about-content">
+                {!loading && <Loading/>}
                 <h1>{apartmentData?.name}</h1>
                 <div>
                     {parser(apartmentData?.description ?? "")}
