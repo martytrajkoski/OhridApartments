@@ -17,7 +17,6 @@ const Onboarding: React.FC = () => {
         try {
             const response = await axiosClient.get('/apartments-summary');
             setApartments(response.data.apartments_summary);
-            console.log('first', response.data.apartments_summary)
 
         } catch (error) {
             console.error(error);

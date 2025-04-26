@@ -118,15 +118,7 @@
         justify-content: space-between;
 
         .navbar-back{
-            gap: 20px;
-
-            .back-button{
-                display: none;
-            }
-
-            .navbar-logo-wrapper{
-                display: none;
-            }
+            display: none;
         }
 
         .navbar-items{

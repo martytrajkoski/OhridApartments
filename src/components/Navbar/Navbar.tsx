@@ -78,7 +78,11 @@ const Navbar: React.FC = () => {
                     <div className="navbar-logo">
                         {activeApartment && (<img src={`${activeApartment[0]?.logo}`} alt="" className="navbar-logo-00" onClick={handleMenu}/>)}
                         {otherApartments?.map((apartment: ApartmentType, index: number)=>(
-                            <img key={index} src={apartment.logo} className={closeMenu ? `navbar-logo-${index}` : "navbar-logo-open"} onClick={()=>navigate(`/${apartment?.name}`)}/>
+                            <img key={index} 
+                                src={apartment.logo} 
+                                className={closeMenu ? `navbar-logo-${index}` : "navbar-logo-open"} 
+                                onClick={() => (navigate(`/${apartment?.name}`), setCloseMenu(true))}
+                            />
                         ))}
                     </div>
                 </div>

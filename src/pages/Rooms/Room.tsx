@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBed, faCheck, faHouse, faLocationDot, faParking, faSquareParking, faStar } from "@fortawesome/free-solid-svg-icons";
+import { faBed, faCheck, faLocationDot, faParking, faStar } from "@fortawesome/free-solid-svg-icons";
 import Gallery from "../../components/Slideshow/Gallery/Gallery";
 import parser from "html-react-parser";
 import Map from "../../components/Map/Map";
 import Reserve from "../../components/Reserve/Reserve";
 import axiosClient from "../../axios/axiosClient";
 import { FacilityType, RoomType } from "../../types/types";
+import Loading from "../../components/Loading/Loading";
 
 const Room: React.FC = () => {
     const [roomData, setRoom] = useState<RoomType>();
     const [showReservationModal, setShowReservationModal] = useState(false);
+    const [loading, setLoading] = useState<boolean>(true);
     const { room } = useParams<{ room:string }>();
 
     useEffect(()=>{
@@ -19,6 +21,8 @@ const Room: React.FC = () => {
     }, []);
 
     const fetchRoom = async() => {
+        setLoading(true);
+
         try {
             const response = await axiosClient.post('/room',{
                 name: room
@@ -26,17 +30,19 @@ const Room: React.FC = () => {
 
             if(response.status === 200){
                 setRoom(response.data.room);
-                console.log('response.data.room', response.data.room)
-                console.log('room', roomData?.apartment.top_facilities)
             }
                 
-
         } catch (error) {
             console.error(error);
+        } finally {
+            setLoading(true);
         }
     }
+
     return(
+        
         <div className="room">
+            {!loading && <Loading/>}
             <div className="room-info">
                 <div className="room-info-details">
                     <h1>{roomData?.name}</h1>

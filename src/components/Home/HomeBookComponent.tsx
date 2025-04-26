@@ -33,7 +33,7 @@ const HomeBookComponent: React.FC = () => {
         <div className="book-component">
             <Slideshow images={apartmentImages ?? []} />
             <div className="overlay-center">
-                <span>{ apartment }</span>
+                <h1>{ apartment }</h1>
                 <button onClick={()=>setShowReservationModal(true)} className="book-now">Book Now</button>
             </div>
             {showReservationModal && (
