@@ -35,93 +35,108 @@ const Room: React.FC = () => {
         } catch (error) {
             console.error(error);
         } finally {
-            setLoading(true);
+            setLoading(false);
         }
     }
 
     return(
-        
-        <div className="room">
-            {!loading && <Loading/>}
-            <div className="room-info">
-                <div className="room-info-details">
-                    <h1>{roomData?.name}</h1>
-                    <small><FontAwesomeIcon icon={faLocationDot}/>{roomData?.apartment.location.address} {roomData?.apartment.location.city} {roomData?.apartment.location.country} - <a href={roomData?.apartment.location.map_url}>Excellent location - show map</a></small>
-                </div>
-                <div className="room-info-button">
-                    <div className="rating"><FontAwesomeIcon icon={faStar}/> {roomData?.apartment.rating}</div>
-                    <div className="reserve" onClick={()=>setShowReservationModal(true)}>Reserve</div>
-                </div>
-            </div>
-            <div className="room-display">
-                <div className="room-display-gallery">
-                    <Gallery images={roomData?.images ?? []}/>
-                </div>
-                <div className="room-display-map">
-                    <Map lat={roomData?.apartment.location.latitude ?? 0} lng={roomData?.apartment.location.longitude ?? 0} zoom={15}/>
-                </div>
-            </div>
-            <div className="room-description">
-                <div className="room-description-container">
-                    <div className="top-facilities">
-                        {roomData?.apartment.top_facilities.map((facility:FacilityType, index:number)=>(
-                            <div className="top-facility-card" key={index}>{facility.name}</div>
-                        ))}
+        <>
+            {loading && <Loading/>}
+            <div className="room">
+                <div className="room-info">
+                    <div className="room-info-details">
+                        <h1>{roomData?.name}</h1>
+                        <small><FontAwesomeIcon icon={faLocationDot}/>{roomData?.apartment.location.address} {roomData?.apartment.location.city} {roomData?.apartment.location.country} - <a href={roomData?.apartment.location.map_url}>Excellent location - show map</a></small>
                     </div>
-                    <div className="room-description-text">
-                        {parser(roomData?.description ?? "")}
+                    <div className="room-info-button">
+                        <div className="rating"><FontAwesomeIcon icon={faStar}/> {roomData?.apartment.rating}</div>
+                        <div className="reserve" onClick={()=>setShowReservationModal(true)}>Reserve</div>
                     </div>
-                    <div className="facility">
-                        {roomData?.bed && (
-                            <div className="all-facilities">
-                                {roomData.bed.map((item, index) => (
-                                    <div key={index}><FontAwesomeIcon icon={faBed}/> {item}</div>
-                                ))}
-                            </div>
-                        )}
-                        {roomData?.room_size && (
-                            <div><b>Room Size: </b>{roomData.room_size} m<sup>2</sup></div>
-                        )} 
-                        {roomData?.parking && (
-                            <div><FontAwesomeIcon icon={faParking}/> {roomData.parking}</div>
-                        )} 
+                </div>
+                <div className="room-display">
+                    <div className="room-display-gallery">
+                        <Gallery images={roomData?.images ?? []}/>
                     </div>
-                    <div className="facilities">
-                        {roomData?.view && (
-                            <div>
-                                <b>Views:</b>
+                    <div className="room-display-map">
+                        <Map lat={roomData?.apartment.location.latitude ?? 0} lng={roomData?.apartment.location.longitude ?? 0} zoom={15}/>
+                    </div>
+                </div>
+                <div className="room-description">
+                    <div className="room-description-container">
+                        <div className="top-facilities">
+                            {roomData?.apartment.top_facilities.map((facility:FacilityType, index:number)=>(
+                                <div className="top-facility-card" key={index}>{facility.name}</div>
+                            ))}
+                        </div>
+                        <div className="room-description-text">
+                            {parser(roomData?.description ?? "")}
+                        </div>
+                        <div className="facility">
+                            {roomData?.bed && (
                                 <div className="all-facilities">
-                                    {roomData?.view && roomData?.view.map((item:any, index:number) => (
-                                        <div key={index}><FontAwesomeIcon icon={faCheck}/> {item}</div>
+                                    {roomData.bed.map((item, index) => (
+                                        <div key={index}><FontAwesomeIcon icon={faBed}/> {item}</div>
                                     ))}
                                 </div>
+                            )}
+                            {roomData?.room_size && (
+                                <div><b>Room Size: </b>{roomData.room_size} m<sup>2</sup></div>
+                            )} 
+                            {roomData?.parking && (
+                                <div><FontAwesomeIcon icon={faParking}/> {roomData.parking}</div>
+                            )} 
+                        </div>
+                        <div className="facilities">
+                            {roomData?.view && (
+                                <div>
+                                    <b>Views:</b>
+                                    <div className="all-facilities">
+                                        {roomData?.view && roomData?.view.map((item:any, index:number) => (
+                                            <div key={index}><FontAwesomeIcon icon={faCheck}/> {item}</div>
+                                        ))}
+                                    </div>
 
-                            </div>
-                        )}
-                        {roomData?.bathroom && (
-                            <div>
-                                <b>Bathroom:</b>
-                                <div className="all-facilities">
-                                    {roomData?.bathroom.map((item:any, index:number) => (
-                                        <div key={index}><FontAwesomeIcon icon={faCheck}/> {item}</div>
-                                    ))}
                                 </div>
+                            )}
+                            {roomData?.bathroom && (
+                                <div>
+                                    <b>Bathroom:</b>
+                                    <div className="all-facilities">
+                                        {roomData?.bathroom.map((item:any, index:number) => (
+                                            <div key={index}><FontAwesomeIcon icon={faCheck}/> {item}</div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+                            <div>
+                                {roomData?.apartment.check_in && (
+                                    <div>
+                                        <b>Check In:</b>
+                                        <p>From {JSON.parse(roomData.apartment.check_in)[0]} to {JSON.parse(roomData.apartment.check_in)[1]}</p>
+                                    </div>
+                                )}
+                                {roomData?.apartment.check_out && (
+                                    <div>
+                                        <b>Check Out:</b>
+                                        <p>From {JSON.parse(roomData.apartment.check_out)[0]} to {JSON.parse(roomData.apartment.check_out)[1]}</p>
+                                    </div>
+                                )}
                             </div>
-                        )}
+                        </div>
+                    </div>
+                    <div className="room-description-sidebar">
+                        <div className="all-facilities">
+                            {roomData?.all_facilities.map((facility:FacilityType, index:number) => (
+                                <div key={index}><FontAwesomeIcon icon={faCheck}/> {facility.name}</div>
+                            ))}
+                        </div>
                     </div>
                 </div>
-                <div className="room-description-sidebar">
-                    <div className="all-facilities">
-                        {roomData?.all_facilities.map((facility:FacilityType, index:number) => (
-                            <div key={index}><FontAwesomeIcon icon={faCheck}/> {facility.name}</div>
-                        ))}
-                    </div>
-                </div>
+                {showReservationModal && (
+                    <Reserve onClose={() => setShowReservationModal(false)}/>
+                )}
             </div>
-            {showReservationModal && (
-                <Reserve onClose={() => setShowReservationModal(false)}/>
-            )}
-        </div>
+        </>
     )
 }
 

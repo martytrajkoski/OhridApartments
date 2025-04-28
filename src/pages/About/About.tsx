@@ -38,31 +38,37 @@ const About: React.FC = () => {
 
 
     return (
-        <div className="about">
-            <div className="about-content">
-                {!loading && <Loading/>}
-                <h1>{apartmentData?.name}</h1>
-                <div>
-                    {parser(apartmentData?.description ?? "")}
+        <>
+            {loading && <Loading/>}
+            <div className="about">
+                <div className="about-content">
+                    <h1>{apartmentData?.name}</h1>
+                    <div>
+                        {parser(apartmentData?.description ?? "")}
+                    </div>
+                    <div>
+                    {apartmentData?.check_in && (
+                        <p>Check In: From {JSON.parse(apartmentData.check_in)[0]} to {JSON.parse(apartmentData.check_in)[1]}</p>
+                    )}
+                    {apartmentData?.check_out && (
+                        <p>Check Out: From {JSON.parse(apartmentData.check_out)[0]} to {JSON.parse(apartmentData.check_out)[1]}</p>
+                    )}
+                    </div>
+                    <div className="facilities">
+                        {apartmentData?.top_facilities.map((item, index) => (
+                            <div className="top-facility-card" key={index}>{item.name}</div>
+                        ))}
+                    </div>
                 </div>
-                <div>
-                    <p>Check In: {apartmentData?.check_in.slice(0, 5)}</p>
-                    <p>Check Out: {apartmentData?.check_out.slice(0, 5)}</p>
-                </div>
-                <div className="facilities">
-                    {apartmentData?.top_facilities.map((item, index) => (
-                        <div className="top-facility-card" key={index}>{item.name}</div>
-                    ))}
+                <div className="map">
+                    <Map lat={apartmentData?.location.latitude!} lng={apartmentData?.location.longitude!} zoom={15} />
+                    <div className="contact">
+                        {apartmentData?.email && <div><FontAwesomeIcon icon={faEnvelope}/>: {apartmentData?.email}</div>}
+                        {apartmentData?.phone_number && <div><FontAwesomeIcon icon={faPhone}/>: {apartmentData?.phone_number}</div>}
+                    </div>
                 </div>
             </div>
-            <div className="map">
-                <Map lat={apartmentData?.location.latitude!} lng={apartmentData?.location.longitude!} zoom={15} />
-                <div className="contact">
-                    <div><FontAwesomeIcon icon={faEnvelope}/>: {apartmentData?.email}</div>
-                    <div><FontAwesomeIcon icon={faPhone}/>: {apartmentData?.phone_number}</div>
-                </div>
-            </div>
-        </div>
+        </>
     )
 }
 export default About;
