@@ -10,14 +10,6 @@
     backdrop-filter: blur(2px);
     color: white;
     font-size: 18px;
-    // background-color: #056a75be;
-    // height: 100%;
-    // position: fixed;
-    // top: 10;
-    // left: 0;
-    // height: 100%;
-    // width: 100%;
-    // z-index: -2;
 
     .about-content{
         display: flex;
@@ -28,6 +20,7 @@
         
         .facilities{
             display: flex;
+            flex-wrap: wrap;
             gap: 10px;
             .top-facility-card{
                 padding: 10px 5px;

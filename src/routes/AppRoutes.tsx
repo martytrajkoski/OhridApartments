@@ -6,6 +6,7 @@ import Home from "../pages/Home/Home";
 import Rooms from "../pages/Rooms/Rooms";
 import Room from "../pages/Rooms/Room";
 import About from "../pages/About/About";
+import Explore from "../pages/Explore/Explore";
 
 const AppRoutes: React.FC = () =>{
     return(
@@ -18,6 +19,7 @@ const AppRoutes: React.FC = () =>{
                     <Route path=":room" element={<Room/>}/>
                     <Route path="about" element={<About/>}/>
                 </Route>
+                <Route path="/explore" element={<Explore/>}/>
             </Routes>
         </Router>
     )

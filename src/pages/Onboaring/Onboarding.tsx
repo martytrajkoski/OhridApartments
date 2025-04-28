@@ -60,7 +60,7 @@ const Onboarding: React.FC = () => {
                     </div>
                 ))}
             </div>
-            <Link to="/" className="onboarding-bottom-card">
+            <Link to="explore" className="onboarding-bottom-card">
                 Explore Ohrid
             </Link>
         </div>

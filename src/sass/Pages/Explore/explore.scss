@@ -1,0 +1,42 @@
+.explore{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    // background-color: rgb(250, 250, 250);
+    
+    .explore-cards{
+        display: flex;
+        width: 100%;
+        gap: 30px;
+    }
+
+    .explore-bottom-card {
+        position: absolute;
+        bottom: 0;
+        height: 50px;
+        width: 250px;
+        background-color: #056a75;
+        color: white;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 200ms;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+
+        &:hover {
+            padding: 0 20px 20px 20px;
+            transition: 200ms;
+            color: #056a75;
+            border-top: 2px solid #056a75;
+            border-left: 2px solid #056a75;
+            border-right: 2px solid #056a75;
+            background-color: white;
+        }
+    }
+}
