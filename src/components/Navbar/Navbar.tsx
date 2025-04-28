@@ -96,7 +96,6 @@ const Navbar: React.FC = () => {
                 <div className="burger-menu">
                     <Link to={''} onClick={() => setCloseBurger(true)}>Home</Link>
                     <Link to={'rooms'} onClick={() => setCloseBurger(true)}>Rooms</Link>
-                    <Link to={''} onClick={() => setCloseBurger(true)}>Explore Ohrid</Link>
                     <Link to={'about'} onClick={() => setCloseBurger(true)}>About</Link>
                 </div>
                 <div className="burger-apartments">
@@ -112,7 +111,6 @@ const Navbar: React.FC = () => {
             >
                 <Link to={''}>Home</Link>
                 <Link to={'rooms'}>Rooms</Link>
-                <Link to={''}>Explore Ohrid</Link>
                 <Link to={'about'}>About</Link>
             </div>
 

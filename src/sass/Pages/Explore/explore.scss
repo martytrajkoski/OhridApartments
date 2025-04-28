@@ -1,21 +1,82 @@
-.explore{
+.explore {
     width: 100%;
-    height: 100vh;
+    height: 98vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 100px;
+    overflow-x: hidden;
     // background-color: rgb(250, 250, 250);
+
+    .explore-cards {
+        white-space: nowrap;
+        overflow: hidden;
+        position: relative;
+
+        .text-slide {
+            display: inline-flex;
+            gap: 50px;
+            animation: slide 60s linear infinite;
+
+            &:hover{
+                animation-play-state: paused;
+            }
+        }
     
-    .explore-cards{
-        display: flex;
+        @keyframes slide {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-200%);
+            }
+        }
+    }
+
+    .apartments-scroll {
+        margin: 0 auto;
         width: 100%;
-        gap: 30px;
+        overflow: hidden;
+        white-space: nowrap;
+        background-color: white;
+
+        .text-slide {
+            display: inline-block;
+            animation: slide-right 30s infinite linear;
+            
+            h2 {
+                font-size: 2rem;
+                color: black;
+                display: inline-block;
+                margin: 10px 20px;
+            }
+
+        }
+        
+        @keyframes slide {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes slide-right {
+            from {
+                transform: translateX(-100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
     }
 
     .explore-bottom-card {
-        position: absolute;
+        position: fixed;
         bottom: 0;
         height: 50px;
         width: 250px;

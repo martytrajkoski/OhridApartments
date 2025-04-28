@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import axiosClient from "../../axios/axiosClient";
 import { ApartmentType } from "../../types/types";
 
@@ -60,9 +60,6 @@ const Onboarding: React.FC = () => {
                     </div>
                 ))}
             </div>
-            <Link to="explore" className="onboarding-bottom-card">
-                Explore Ohrid
-            </Link>
         </div>
     );
 };
