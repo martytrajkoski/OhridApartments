@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import {useNavigate } from "react-router-dom";
 import axiosClient from "../../axios/axiosClient";
 import { ApartmentType } from "../../types/types";
+import backgroundImg from "../../assets/backgrounds/ohrid.jpg"
 
 const Onboarding: React.FC = () => {
     const [zoomIndex, setZoomIndex] = useState<number | null>(null);
@@ -34,7 +35,7 @@ const Onboarding: React.FC = () => {
         <div 
             className="onboarding"
             style={{
-                backgroundImage: `url(${hoverBg || "/src/assets/ohrid.jpg"})`,
+                backgroundImage: `url(${hoverBg || backgroundImg})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 transition: '300ms'
