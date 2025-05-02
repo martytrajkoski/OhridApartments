@@ -64,7 +64,7 @@ const About: React.FC = () => {
                     <Map lat={apartmentData?.location.latitude!} lng={apartmentData?.location.longitude!} zoom={15} />
                     <div className="contact">
                         {apartmentData?.email && <div><FontAwesomeIcon icon={faEnvelope}/>: {apartmentData?.email}</div>}
-                        {apartmentData?.phone_number && <div><FontAwesomeIcon icon={faPhone}/>: {apartmentData?.phone_number}</div>}
+                        {apartmentData?.phone_number && <div><FontAwesomeIcon icon={faPhone}/>: {apartmentData?.phone_number.map((number, index) => (<span key={index}>{number} </span>))} </div>}
                     </div>
                 </div>
             </div>
