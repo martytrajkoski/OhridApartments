@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import {useNavigate } from "react-router-dom";
 import axiosClient from "../../axios/axiosClient";
 import { ApartmentType } from "../../types/types";
-import backgroundImg from "../../backgrounds/ohrid.jpg"
+import backgroundImg from "../../../public/backgrounds/ohrid.jpg"
 
 const Onboarding: React.FC = () => {
     const [zoomIndex, setZoomIndex] = useState<number | null>(null);
