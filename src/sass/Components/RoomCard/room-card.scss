@@ -31,8 +31,9 @@
     }
 
     &:hover{
-        background-color: rgb(227, 227, 227);
+        background-color: rgb(235, 235, 235);
         transition: 200ms;
+        scale: 1.01;
     }
 
     .room-name-m{
@@ -60,6 +61,7 @@
         border-radius: 0px;
         box-shadow: none;
         border: 1px solid #056a75;
+        background-color: rgba(255, 255, 255, 0.729);
 
         .room-info{
             display: none;
