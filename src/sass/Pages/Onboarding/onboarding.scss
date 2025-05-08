@@ -17,7 +17,7 @@
         left: 50%;
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
-        background-color: rgba(0, 0, 0, 0.13);
+        background-color: rgba(0, 0, 0, 0.5);
     }
 
     .onboarding-container {
@@ -30,14 +30,23 @@
 
         .onboarding-card {
             transition: 200ms;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: rgba(255, 255, 255, 0.493);
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
             
             img {
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.705);
                 width: 220px;
                 height: 220px;
                 object-fit: cover;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.705);
                 border-radius: 10px;
-                border: 2px solid white;
+                margin: 15px;
             }
 
             &:hover {
@@ -114,14 +123,36 @@
             width: 70%;
             
             .onboarding-card{
+                width: 180px;
+                height: 180px;
+
                 img{
-                    width: 180px;
-                    height: 180px;
+                    width: 150px;
+                    height: 150px;
                 }
             }
         }
     }
 }
+
+// @media (max-width: 650px){
+//     .onboarding{
+
+//         .onboarding-container{
+//             width: 70%;
+            
+//             .onboarding-card{
+//                 width: 10px;
+//                 height: 150px;
+
+//                 img{
+//                     width: 150px;
+//                     height: 150px;
+//                 }
+//             }
+//         }
+//     }
+// }
 
 @media (max-width: 565px){
     .onboarding{
@@ -131,9 +162,32 @@
             width: 85%;
             
             .onboarding-card{
+                width: 160px;
+                height: 160px;
+
                 img{
                     width: 140px;
                     height: 140px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 390px){
+    .onboarding{
+        background-position-x: 700px;
+
+        .onboarding-container{
+            width: 85%;
+            
+            .onboarding-card{
+                width: 140px;
+                height: 140px;
+
+                img{
+                    width: 120px;
+                    height: 120px;
                 }
             }
         }
