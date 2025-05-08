@@ -3,9 +3,10 @@ import Modal from "./Modal";
 
 type Props = {
   images: string[];
+  alternative: string;
 };
 
-const Gallery: React.FC<Props> = ({ images = [] }) => {
+const Gallery: React.FC<Props> = ({ images = [], alternative }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -26,7 +27,7 @@ const Gallery: React.FC<Props> = ({ images = [] }) => {
             className={`gallery-item ${index === 0 || index === 1 ? "large" : ""}`}
             onClick={() => {handleClick(index); setShowModal(true)}}
           >
-            <img src={`${item}`} alt={`thumb-${index}`} />
+            <img src={`${item}`} alt={alternative} />
           </div>
         ))}
         {remainingCount > 0 && (
@@ -41,6 +42,7 @@ const Gallery: React.FC<Props> = ({ images = [] }) => {
           images={images}
           onClose={() => setShowModal(false)}
           initialIndex={selectedIndex}
+          alternative={alternative}
         />
       )}
     </>
