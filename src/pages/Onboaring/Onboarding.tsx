@@ -3,7 +3,6 @@ import {useNavigate } from "react-router-dom";
 import axiosClient from "../../axios/axiosClient";
 import { ApartmentType } from "../../types/types";
 import backgroundImg from "../../../public/backgrounds/ohrid.jpg"
-import { Helmet } from 'react-helmet-async';
 
 const Onboarding: React.FC = () => {
     const [zoomIndex, setZoomIndex] = useState<number | null>(null);
@@ -40,11 +39,7 @@ const Onboarding: React.FC = () => {
                 transition: '300ms'
             }}
         >
-            <Helmet>
-                <title>Ohrid Apartments</title>
-                <meta name="description" content="Book top-rated apartments in Ohrid near the lake and the Old Town. Discover White Lake, Boulevard Apartments, and Casa Norvegia Apartments." />
-                <link rel="canonical" href="https://theohridapartments.com/" />
-            </Helmet>
+
             <div className="overlay-center"></div>
             <div className="onboarding-container">
                 {apartments?.map((apartment: any, index: number) => (
