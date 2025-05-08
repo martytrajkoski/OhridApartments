@@ -41,9 +41,9 @@ const Onboarding: React.FC = () => {
             }}
         >
             <Helmet>
-            <title>Ohrid Apartments</title>
-            <meta name="description" content="Book top-rated apartments in Ohrid near the lake and the Old Town. Discover White Lake, Boulevard Apartments, and Casa Norvegia Apartments." />
-            <link rel="canonical" href="https://theohridapartments.com/" />
+                <title>Ohrid Apartments</title>
+                <meta name="description" content="Book top-rated apartments in Ohrid near the lake and the Old Town. Discover White Lake, Boulevard Apartments, and Casa Norvegia Apartments." />
+                <link rel="canonical" href="https://theohridapartments.com/" />
             </Helmet>
             <div className="overlay-center"></div>
             <div className="onboarding-container">

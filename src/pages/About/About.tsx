@@ -51,7 +51,7 @@ const About: React.FC = () => {
                 <div className="about-content">
                     <h1>{apartmentData?.name}</h1>
                     <div>
-                        {parser(apartmentData?.description ?? "" )}
+                        {parser(apartmentData?.description ?? "")}
                     </div>
                     <div>
                     {apartmentData?.check_in && (
