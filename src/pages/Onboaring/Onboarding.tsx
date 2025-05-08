@@ -61,7 +61,7 @@ const Onboarding: React.FC = () => {
                         onMouseEnter={() => setHoverBg(apartment.images[0])}
                         onMouseLeave={() => setHoverBg(null)}
                     >
-                        <img src={apartment.logo} alt="Logo" />
+                        <img src={apartment.logo} alt="Logo"/>
                     </div>
                 ))}
             </div>
