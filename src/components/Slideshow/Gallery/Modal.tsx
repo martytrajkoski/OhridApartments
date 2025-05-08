@@ -57,6 +57,7 @@ const Modal: React.FC<Props> = ({ images, onClose, initialIndex, alternative }) 
               alt={alternative}
               className={`thumbnail-img ${index === selectedIndex ? "active" : ""}`}
               onClick={() => setSelectedIndex(index)}
+              loading="lazy"
             />
           ))}
         </div>

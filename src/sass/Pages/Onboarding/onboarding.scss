@@ -6,6 +6,8 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    background-size: cover;
+    background-position: center;
 
     .overlay-center{
         position: absolute;
@@ -123,6 +125,7 @@
 
 @media (max-width: 565px){
     .onboarding{
+        background-position-x: 700px;
 
         .onboarding-container{
             width: 85%;

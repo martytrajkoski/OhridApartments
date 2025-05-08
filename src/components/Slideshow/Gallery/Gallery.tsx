@@ -27,12 +27,12 @@ const Gallery: React.FC<Props> = ({ images = [], alternative }) => {
             className={`gallery-item ${index === 0 || index === 1 ? "large" : ""}`}
             onClick={() => {handleClick(index); setShowModal(true)}}
           >
-            <img src={`${item}`} alt={alternative} />
+            <img src={item} alt={alternative} />
           </div>
         ))}
         {remainingCount > 0 && (
           <div className="gallery-item more" onClick={() => handleClick(7)}>
-            <div className="overlay">+{remainingCount} photos</div>
+            <div className="overlay">+ {remainingCount} photos</div>
           </div>
         )}
       </div>

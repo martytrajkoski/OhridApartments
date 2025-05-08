@@ -6,7 +6,7 @@ interface SlideshowProps {
   interval?: number;
 }
 
-const Slideshow: React.FC<SlideshowProps> = ({ images = [], interval = 5000 }) => {
+const Slideshow: React.FC<SlideshowProps> = ({ images = [], interval = 5000, }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const Slideshow: React.FC<SlideshowProps> = ({ images = [], interval = 5000 }) =
         <div
           key={index}
           className={`slide ${index === currentIndex ? "active" : ""}`}
-          style={{ backgroundImage: `url(${src})` }}
+          style={{ backgroundImage: `url(${src})`, backgroundSize: 'cover'}}
         />
       ))}
       <div className="overlay" />
