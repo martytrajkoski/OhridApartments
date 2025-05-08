@@ -6,9 +6,10 @@ type Props = {
   images: string[];
   onClose: () => void;
   initialIndex: number;
+  alternative: string;
 };
 
-const Modal: React.FC<Props> = ({ images, onClose, initialIndex }) => {
+const Modal: React.FC<Props> = ({ images, onClose, initialIndex, alternative }) => {
   const [selectedIndex, setSelectedIndex] = useState(initialIndex);
 
   const goToPrevious = () => {
@@ -23,7 +24,6 @@ const Modal: React.FC<Props> = ({ images, onClose, initialIndex }) => {
     );
   };
 
-  // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft") goToPrevious();
@@ -44,7 +44,7 @@ const Modal: React.FC<Props> = ({ images, onClose, initialIndex }) => {
           <button className="nav-btn prev-btn" onClick={goToPrevious}><FontAwesomeIcon icon={faChevronLeft}/></button>
           <img
             src={images[selectedIndex]}
-            alt={`selected-${selectedIndex}`}
+            alt={alternative}
           />
           <button className="nav-btn next-btn" onClick={goToNext}><FontAwesomeIcon icon={faChevronRight}/></button>
         </div>
@@ -54,7 +54,7 @@ const Modal: React.FC<Props> = ({ images, onClose, initialIndex }) => {
             <img
               key={index}
               src={item}
-              alt={`thumb-${index}`}
+              alt={alternative}
               className={`thumbnail-img ${index === selectedIndex ? "active" : ""}`}
               onClick={() => setSelectedIndex(index)}
             />

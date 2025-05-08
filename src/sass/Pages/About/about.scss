@@ -39,7 +39,25 @@
         .contact{
             display: flex;
             flex-direction: column;
+            justify-content: center;
             gap: 5px;
+
+            .contact-number{
+                display: flex;
+                align-items: center;
+                gap: 3px;
+
+                svg{
+                    width: 18px;
+                    height: 18px;
+                }
+    
+                .svg-social{
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+
         }
     }
     

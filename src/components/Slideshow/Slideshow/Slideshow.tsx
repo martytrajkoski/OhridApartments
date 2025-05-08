@@ -6,7 +6,7 @@ interface SlideshowProps {
   interval?: number;
 }
 
-const Slideshow: React.FC<SlideshowProps> = ({ images = [], interval = 5000, }) => {
+const Slideshow: React.FC<SlideshowProps> = ({ images = [], interval = 5000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {

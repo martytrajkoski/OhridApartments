@@ -4,6 +4,7 @@ import axiosClient from "../../axios/axiosClient";
 import { RoomType } from "../../types/types";
 import { useParams } from "react-router-dom";
 import Loading from "../../components/Loading/Loading";
+import { Helmet } from "react-helmet";
 
 const HomeRooms: React.FC = () => {
     const {apartment} = useParams<{apartment:string}>();
@@ -34,6 +35,12 @@ const HomeRooms: React.FC = () => {
     
     return(
         <div className="home-rooms">
+            <Helmet>
+                <meta name="description" content={`${apartment} Ohrid Apartments`} />
+                <meta name="keywords" content={`${apartment} Ohrid Apartments`} />
+                <meta property="og:title" content={`${apartment} Ohrid Apartments`} />
+                <meta property="og:description" content={`${apartment} Ohrid Apartments`} />
+            </Helmet>
             {loading && <Loading/>}
             {rooms.map((room:RoomType, index:number)=>(
                 <RoomCard room={room} key={index}/>
