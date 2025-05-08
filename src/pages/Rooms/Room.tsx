@@ -9,7 +9,6 @@ import Reserve from "../../components/Reserve/Reserve";
 import axiosClient from "../../axios/axiosClient";
 import { FacilityType, RoomType } from "../../types/types";
 import Loading from "../../components/Loading/Loading";
-import { Helmet } from "react-helmet";
 
 const Room: React.FC = () => {
     const [roomData, setRoom] = useState<RoomType>();
@@ -42,13 +41,6 @@ const Room: React.FC = () => {
 
     return(
         <>
-            <Helmet>
-                <meta name="description" content={`${room} | ${roomData?.apartment.name} | ${roomData?.description} | Ohrid Apartments`} />
-                <meta name="keywords" content={`${room} | ${roomData?.apartment.name} | ${roomData?.description} | Ohrid Apartments`} />
-                <meta property="og:title" content={`${room} | ${roomData?.apartment.name} | ${roomData?.description} | Ohrid Apartments`} />
-                <meta property="og:description" content={`${room} | ${roomData?.apartment.name} | ${roomData?.description} | Ohrid Apartments`} />
-
-            </Helmet>
             {loading && <Loading/>}
             <div className="room">
                 <div className="room-info">

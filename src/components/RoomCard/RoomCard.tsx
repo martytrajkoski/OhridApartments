@@ -3,7 +3,6 @@ import parser from "html-react-parser";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { RoomType } from "../../types/types";
-import { Helmet } from "react-helmet";
 
 const RoomCard: React.FC<{room: RoomType}> = ({room}) => {
     const { apartment } = useParams();  
@@ -21,11 +20,6 @@ const RoomCard: React.FC<{room: RoomType}> = ({room}) => {
 
     return(
         <Link to={`/${apartment}/${room?.name}`} className="room-card">
-            <Helmet>
-                <meta name="description" content={`${room.description} | ${room.name} | Ohrid Apartments`} />
-                <meta name="keywords" content={`${room.description} | ${room.name} | Ohrid Apartments`} />
-                <meta property="og:description" content={`${room.description} | ${room.name} | Ohrid Apartments`} />
-            </Helmet>
             <h1 className="room-name-m">
                 {room.name}
             </h1>

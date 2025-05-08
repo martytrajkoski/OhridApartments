@@ -7,7 +7,6 @@ import Map from "../../components/Map/Map";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import Loading from "../../components/Loading/Loading";
-import { Helmet } from "react-helmet";
 
 const About: React.FC = () => {
     const [apartmentData, setApartmentData] = useState<ApartmentType>();
@@ -40,12 +39,6 @@ const About: React.FC = () => {
 
     return (
         <>
-            <Helmet>
-                <meta name="description" content={`${apartment} ${apartmentData?.description} Ohrid Apartments`} />
-                <meta name="keywords" content={`${apartment} ${apartmentData?.description} Ohrid Apartments`} />
-                <meta property="og:title" content={`${apartment} ${apartmentData?.description} Ohrid Apartments`} />
-                <meta property="og:description" content={`${apartment} ${apartmentData?.description} Ohrid Apartments`} />
-            </Helmet>
             {loading && <Loading/>}
             <div className="about">
                 <div className="about-content">
