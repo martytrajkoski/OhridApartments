@@ -1,43 +1,39 @@
 import React, { useEffect, useState } from "react";
-import {useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axiosClient from "../../axios/axiosClient";
 import { ApartmentType } from "../../types/types";
 import { Helmet } from 'react-helmet-async';
-import backgroundImg from "../../../public/backgrounds/ohrid.jpg"
+import backgroundImg from "../../../public/backgrounds/ohrid.jpg";
 
 const Onboarding: React.FC = () => {
-    const [zoomIndex, setZoomIndex] = useState<number | null>(null);
     const [hoverBg, setHoverBg] = useState<string | null>(null);
     const [apartments, setApartments] = useState<ApartmentType[]>([]);
+    const [showApartments, setShowApartments] = useState<boolean>(false);
     const navigate = useNavigate();
 
-    useEffect(()=>{
+    useEffect(() => {
         fetchAparments();
-    },[])
+    }, []);
 
-    const fetchAparments = async() => {
+    const fetchAparments = async () => {
         try {
             const response = await axiosClient.get('/apartments-summary');
             setApartments(response.data.apartments_summary);
-
         } catch (error) {
             console.error(error);
         }
-    }
+    };
 
     const handleCardClick = (index: number, route: string) => {
-        setZoomIndex(index);
-        setTimeout(() => {
-            navigate(route);
-        }, 600); 
+        navigate(route);
     };
 
     return (
-        <div 
+        <div
             className="onboarding"
             style={{
                 backgroundImage: `url(${hoverBg || backgroundImg})`,
-                transition: '300ms'
+                transition: '300ms',
             }}
         >
             <Helmet>
@@ -59,23 +55,26 @@ const Onboarding: React.FC = () => {
 
                 <link rel="canonical" href="https://www.theohridapartments.com" />
             </Helmet>
+
             <div className="overlay-center"></div>
+            <div className="onboarding-title">
+                <h1>Ohrid Apartments</h1>
+                <h3>Find your perfect stay</h3>
+            </div>
             <div className="onboarding-container">
-                {apartments?.map((apartment: any, index: number) => (
-                    <div
-                        key={index}
-                        className={`onboarding-card ${
-                        zoomIndex === index
-                            ? "zoomed"
-                            : zoomIndex !== null
-                            ? "faded"
-                            : ""
-                        }`}
+                {!showApartments && (
+                    <button onClick={() => setShowApartments(true)}>Choose Your Stay</button>
+                )}
+                {showApartments && apartments.map((apartment, index) => (
+                    <div 
+                        className="card animate-drop-in" 
+                        key={index} 
                         onClick={() => handleCardClick(index, `/${apartment.name}`)}
-                        onMouseEnter={() => setHoverBg(apartment.images[0])}
+                        onMouseEnter={() => setHoverBg(apartment.images?.[0] || null)}
                         onMouseLeave={() => setHoverBg(null)}
                     >
-                        <img src={apartment.logo} alt="Logo"/>
+                        <img src={apartment.logo} alt={`${apartment.name} Logo`} />
+                        <p>{apartment.name}</p>
                     </div>
                 ))}
             </div>
