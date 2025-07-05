@@ -1,13 +1,14 @@
 .onboarding {
     position: relative;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     background-size: cover;
     background-position: center;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 
     .overlay-center{
         position: absolute;
@@ -20,13 +21,76 @@
         background-color: rgba(0, 0, 0, 0.5);
     }
 
+    .onboarding-title{
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+
+        h1{
+            font-size: 60px;
+            color: white;
+        }
+
+        h3{
+            font-size: 40px;
+            color: rgba(255, 255, 255, 0.414);
+        }
+    }
+
     .onboarding-container {
         display: flex;
+        flex-direction: column;
         flex-wrap: wrap;
-        gap: 30px;
+        gap: 20px;
         transition: transform 0.6s ease, z-index 0s 0.6s;
         cursor: pointer;
         z-index: 1;
+
+        .card{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 30px;
+            width: 550px;
+            color: #e7e8e8;
+            font-size: 22px;
+            border: 1px solid #1c4c53a8;
+            border-radius: 10px;
+            background-color: #6e9094af;
+            backdrop-filter: blur(1px);
+            box-sizing: border-box;
+            padding: 10px;
+            transition: 200ms;
+
+            &:hover {
+                scale: 1.1;
+            }
+
+            img{
+                width: 130px;
+                height: 100px;
+                border-radius: 10px;
+            }
+        }
+
+        button{
+            padding: 20px;
+            border: 1px solid #017582;
+            border-radius: 15px;
+            color: white;
+            background-color: #058492c9;
+            backdrop-filter: blur(1px);
+            font-size: 20px;
+            cursor: pointer;
+            transition: 200ms;
+
+            &:hover{
+                background-color: #0d8390ee;
+                scale: 1.05;
+            }
+        }
 
         .onboarding-card {
             transition: 200ms;
@@ -103,6 +167,22 @@
     }
 }
 
+@keyframes dropIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-drop-in {
+    animation: dropIn 0.6s ease-out forwards;
+}
+
+
 @media (max-width: 1040px){
     .onboarding{
         
@@ -131,32 +211,28 @@
                     height: 150px;
                 }
             }
+
+            .card{
+                width: 400px;
+                
+            }
         }
     }
 }
 
-// @media (max-width: 650px){
-//     .onboarding{
-
-//         .onboarding-container{
-//             width: 70%;
-            
-//             .onboarding-card{
-//                 width: 10px;
-//                 height: 150px;
-
-//                 img{
-//                     width: 150px;
-//                     height: 150px;
-//                 }
-//             }
-//         }
-//     }
-// }
-
 @media (max-width: 565px){
     .onboarding{
         background-position-x: 700px;
+
+        .onboarding-title{
+            h1{
+                font-size: 40px;
+            }
+
+            h3{
+                font-size: 28px;
+            }
+        }
 
         .onboarding-container{
             width: 85%;
@@ -174,7 +250,7 @@
     }
 }
 
-@media (max-width: 390px){
+@media (max-width: 450px){
     .onboarding{
         background-position-x: 700px;
 
@@ -189,6 +265,21 @@
                     width: 120px;
                     height: 120px;
                 }
+            }
+
+            .card{
+                width: 300px;
+                font-size: 18px;
+                
+                img{
+                    width: 100px;
+                    height: 80px;
+                }
+            }
+
+            button{
+                padding: 20px;
+                font-size: 18px;
             }
         }
     }
