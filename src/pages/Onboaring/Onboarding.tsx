@@ -24,7 +24,7 @@ const Onboarding: React.FC = () => {
         }
     };
 
-    const handleCardClick = (index: number, route: string) => {
+    const handleCardClick = (route: string) => {
         navigate(route);
     };
 
@@ -69,7 +69,7 @@ const Onboarding: React.FC = () => {
                     <div 
                         className="card animate-drop-in" 
                         key={index} 
-                        onClick={() => handleCardClick(index, `/${apartment.name}`)}
+                        onClick={() => handleCardClick(`/${apartment.name}`)}
                         onMouseEnter={() => setHoverBg(apartment.images?.[0] || null)}
                         onMouseLeave={() => setHoverBg(null)}
                     >
