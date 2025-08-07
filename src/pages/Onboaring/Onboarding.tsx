@@ -77,10 +77,6 @@ const Onboarding: React.FC = () => {
                         <p>{apartment.name}</p>
                     </div>
                 ))}
-                <div className="card">
-                    <img src="" alt="iamge" />
-                    <p>uiwfiurfrpferufr</p>
-                </div>
             </div>
         </div>
     );
