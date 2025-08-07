@@ -41,9 +41,10 @@
 
     .onboarding-container {
         display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        gap: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;    
+        gap: 40px;
+        justify-content: center;
         transition: transform 0.6s ease, z-index 0s 0.6s;
         cursor: pointer;
         z-index: 1;
@@ -61,7 +62,7 @@
             background-color: #6e9094af;
             backdrop-filter: blur(1px);
             box-sizing: border-box;
-            padding: 10px;
+            padding: 8px;
             transition: 200ms;
 
             &:hover {
@@ -236,6 +237,7 @@
 
         .onboarding-container{
             width: 85%;
+            gap: 20px;
             
             .onboarding-card{
                 width: 160px;
